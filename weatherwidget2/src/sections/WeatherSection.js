@@ -9,6 +9,7 @@ import ErrorComponent from '../customComponents/ErrorComponent';
 import CustomSwitch from '../customComponents/CustomSwitch';
 import SearchComponent from '../customComponents/SearchComponent';
 
+const API_KEY="11ab70ad14039b5b8971613e0c1c91b6"
 const useStyles = makeStyles({
     root: {
         width: '100%',
@@ -46,14 +47,14 @@ const WeatherSection = ({ locationDetails }) => {
                 let fetchedCitiesGeoLocation;
                 if (userInputLocation === null) {
                     result = await axios.get(
-                        `https://api.openweathermap.org/data/2.5/onecall?&units=${unit}&lat=${locationDetails.latitude}&lon=${locationDetails.longitude}&appid=11ab70ad14039b5b8971613e0c1c91b6`
+                        `https://api.openweathermap.org/data/2.5/onecall?&units=${unit}&lat=${locationDetails.latitude}&lon=${locationDetails.longitude}&appid=${API_KEY}`
                     );
                     setWeatherForecast(result.data);
                 }
                 else {
-                    fetchedCitiesGeoLocation = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${userInputLocation}&limit=5&appid=11ab70ad14039b5b8971613e0c1c91b6`)
+                    fetchedCitiesGeoLocation = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${userInputLocation}&limit=5&appid=${API_KEY}`)
                     result = await axios.get(
-                        `https://api.openweathermap.org/data/2.5/onecall?&units=${unit}&lat=${fetchedCitiesGeoLocation.data[0].lat}&lon=${fetchedCitiesGeoLocation.data[0].lon}&appid=11ab70ad14039b5b8971613e0c1c91b6`
+                        `https://api.openweathermap.org/data/2.5/onecall?&units=${unit}&lat=${fetchedCitiesGeoLocation.data[0].lat}&lon=${fetchedCitiesGeoLocation.data[0].lon}&appid=${API_KEY}`
                     );
                     setWeatherForecast(result.data);
                 }

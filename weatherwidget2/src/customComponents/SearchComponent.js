@@ -4,7 +4,6 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
 import { useState } from "react";
 
-// render
 const SearchComponent = ({ onClick }) => {
     const [city, setCity] = useState(null);
     const handleClick = () => {
@@ -15,9 +14,8 @@ const SearchComponent = ({ onClick }) => {
     }
     return (
         <TextField
-            label="City Based Weather"
+            label="Search By City"
             id="searchbox"
-            data-testid="locationSearchbox"
             onChange={onChange}
             InputProps={{
                 endAdornment: (

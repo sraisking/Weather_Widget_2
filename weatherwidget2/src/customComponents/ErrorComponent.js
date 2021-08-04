@@ -8,7 +8,7 @@ const ErrorComponent=()=>{
             </Grid>
             <Grid item xs={6}>
                 <Typography variant='h3'>
-                    Error fetching data
+                    Error in service Call
                 </Typography>
             </Grid>
         </Grid>

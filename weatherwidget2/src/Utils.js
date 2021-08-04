@@ -2,17 +2,17 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 export const getDay = (timeStamp) => {
   let date = new Date();
-  date.setTime(timeStamp * 1000); // javascript timestamps are in milliseconds
+  date.setTime(timeStamp * 1000); 
   return days[date.getDay()];
 }
 export const getMonth = (timeStamp) => {
   let date = new Date();
-  date.setTime(timeStamp * 1000); // javascript timestamps are in milliseconds
+  date.setTime(timeStamp * 1000); 
   return months[date.getMonth()];
 }
 export const getDate = (timeStamp) => {
   let date = new Date();
-  date.setTime(timeStamp * 1000); // javascript timestamps are in milliseconds
+  date.setTime(timeStamp * 1000); 
   return date.getDate();
 }
 export const isEmpty = (val) => {
