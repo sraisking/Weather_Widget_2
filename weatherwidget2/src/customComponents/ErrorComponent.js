@@ -1,17 +1,24 @@
-import { Grid, Typography } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import ErrorIcon from '@material-ui/icons/Error';
-const ErrorComponent=()=>{
-    return(
-        <Grid container spacing={2}>
-            <Grid item xs={6}>
-                <ErrorIcon color="secondary"/>
-            </Grid>
-            <Grid item xs={6}>
+const useStyles = makeStyles({
+
+    textContainer: {
+        display: 'flex'
+    }
+});
+const ErrorComponent = () => {
+    const classes = useStyles()
+    return (
+        <div className={classes.textContainer}>
+            <div>
+                <ErrorIcon color="secondary" />
+            </div>
+            <div >
                 <Typography variant='h3'>
                     Error in service Call
                 </Typography>
-            </Grid>
-        </Grid>
+            </div>
+        </div>
     )
 }
 export default ErrorComponent
